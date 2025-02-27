@@ -1,2 +1,2 @@
 # white-rabbit-window
-Front Page Horizontal Content Scroll
+Front Page Horizontal Content Scroll.

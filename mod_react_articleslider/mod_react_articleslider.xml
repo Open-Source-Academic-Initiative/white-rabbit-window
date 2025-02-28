@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="5.0" client="site">
+    <name>React Article Slider</name>
+    <version>1.0.0</version>
+    <description>Module to display Joomla articles using a React app.</description>
+    <files>
+        <filename module="mod_react_articleslider">mod_react_articleslider.php</filename>
+        <filename>tmpl/default.php</filename>
+        <folder>react-app</folder>
+    </files>
+</extension>

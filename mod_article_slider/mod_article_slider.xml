@@ -3,75 +3,28 @@
     <name>Article Slider</name>
     <version>1.0.0</version>
     <description>Displays a horizontal scrolling list of selected articles.</description>
+    <namespace path="src">OpenSAI\Article\Slider</namespace>
+
     <files>
         <filename module="mod_article_slider">mod_article_slider.php</filename>
-        <filename>helper.php</filename>
+        <filename>ArticleSliderHelper.php</filename>
         <filename>script.js</filename>
         <filename>style.css</filename>
         <folder>tmpl</folder>
+        <folder>src</folder>   
     </files>
     
     <config>
         <fields name="params">
-<!--             <fieldset name="basic">
+            <fieldset name="basic">
                 <field
-                    name="title"
-                    type="sql"
-                    default="10"
-                    label="Select an article"
-                    query="SELECT id AS value, title FROM #__content"
+                    name="article_ids"
+                    type="text"
+                    label="Article IDs"
+                    description="Enter the IDs of the articles you want to display, separated by commas."
+                    size="50"
                 />
-                <field
-                    name="catid"
-                    type="list"
-                    extension="com_content"
-                    label="Select Category"
-                    description="Filter articles by category."
-                    default=""
-                > -->
-<!--                     <option value="">- Select Category -</option> -->
-<!--                     <query>
-                        SELECT id AS value, title AS text FROM #__categories WHERE extension = 'com_content' AND published = 1 ORDER BY title ASC
-                    </query> -->
-<!--                     <?php echo ModArticleSliderHelper::getCategoryOptions(); ?>
-                </field>
-                <field
-                    name="selected_articles"
-                    type="article"
-                    multiple="true"
-                    label="Select Articles"
-                    description="Choose specific articles to display."
-                />
-                <field
-                    name="limit"
-                    type="number"
-                    default="5"
-                    label="Number of Articles"
-                    description="Limit the number of articles displayed."
-                />
-            </fieldset> -->
-<fieldset name="basic">
-        <!-- Category Selection -->
-        <field
-            name="category_id"
-            type="sql"
-            label="Select Category"
-            description="Choose a category to filter articles."
-            query="SELECT id AS value, title FROM #__categories WHERE extension='com_content' ORDER BY title ASC"
-            default=""
-            required="true"
-            onChange="updateArticleList(this.value);"
-        />
-
-        <!-- Article Selection (Initially Empty) -->
-        <field
-            name="article_id"
-            type="list"
-            label="Select Article"
-            description="Choose an article from the selected category."
-            default=""
-        />
-    </fieldset>            
+            </fieldset>            
         </fields>
     </config>
 </extension>

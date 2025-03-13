@@ -297,11 +297,11 @@ $loadMoreStep = 3;
 </div>    
 </div>
 
-    <div class="row d-grid gap-2 col-6 mx-auto">
+    <div class="row d-grid gap-1 col-6 mx-auto">
         <?php if ($totalArticles > $loadMoreStep) : ?>
                 <!-- <button id="loadMoreBtn" class="btn btn-secondary mt-3">Ver más...</button> -->
-                <a id="loadMoreBtn" class="btn btn-secondary btn-sm mt-5 text-center" role="button">Ver más <i class="fa-solid fa-chevron-down"></i></a>
-                <a id="seeMoreLink" href="https://opensai.org/bitacora" class="btn btn-secondary btn-lg mt-5 text-center" style="display:none;" target="_blank">¡Visíta nuestra bitácora!</a>
+                <a id="loadMoreBtn" class="btn btn-secondary btn-sm mt-4 mb-5 text-center" role="button">Ver más <i class="fa-solid fa-chevron-down"></i></a>
+                <a id="seeMoreLink" href="https://opensai.org/bitacora" class="btn btn-secondary btn-lg mt-4 mb-5 text-center" style="display:none;" target="_blank">¡Visíta nuestra bitácora!</a>
         <?php endif; ?>
     </div>
 

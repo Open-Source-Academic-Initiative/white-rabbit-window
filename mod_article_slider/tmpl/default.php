@@ -19,21 +19,11 @@ $loadMoreStep = 3;
             ?>
             <div class="col-md-4 article-card mb-3" <?php echo $index >= $loadMoreStep ? 'style="display:none;"' : ''; ?>>
                 <div class="card h-100">
-            <!-- <div class="col article-card" <?php echo $index >= $loadMoreStep ? 'style="display:none;"' : ''; ?>>
-                <div class="card h-100 shadow-sm"> -->
             
-                    <!-- <img src="<?php echo $article->image; ?>" class="card-img-top" alt="<?php echo $article->title; ?>"> -->
                     <img src="<?php echo htmlspecialchars($imageSrc); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($article->title); ?>" loading="lazy">
                     <div class="card-body d-flex flex-column">
-                        <!-- <h5 class="card-title"><?php echo $article->title; ?></h5> -->
-                        <!-- <p class="card-text"><?php echo $article->introtext; ?></p> -->
-                        <!-- <a href="<?php echo $article->link; ?>" class="btn btn-primary" target="_blank">Read More</a> -->
                         <h5 class="card-title"><?php echo htmlspecialchars($article->title); ?></h5>
-                        <!-- <p class="card-text"><?php echo htmlspecialchars(strip_tags(JHtml::_('string.truncate', $article->introtext, 120))); ?></p> -->
-                    <!-- <div class="card-footer"> -->
                         <a href="<?php echo JRoute::_('index.php?option=com_content&view=article&id=' . $article->id); ?>" target="_blank" class="btn btn-primary mt-auto">Leer más...</a>
-                    <!-- </div> -->
-                         
                 </div>
             </div>
     </div>
@@ -43,7 +33,6 @@ $loadMoreStep = 3;
 
     <div class="row d-grid gap-1 col-6 mx-auto">
         <?php if ($totalArticles > $loadMoreStep) : ?>
-                <!-- <button id="loadMoreBtn" class="btn btn-secondary mt-3">Ver más...</button> -->
                 <a id="loadMoreBtn" class="btn btn-secondary btn-sm mt-4 mb-5 text-center" role="button">Ver más <i class="fa-solid fa-chevron-down"></i></a>
                 <a id="seeMoreLink" href="https://opensai.org/bitacora" class="btn btn-secondary btn-lg mt-4 mb-5 text-center" style="display:none;" target="_blank">¡Visíta nuestra bitácora!</a>
         <?php endif; ?>

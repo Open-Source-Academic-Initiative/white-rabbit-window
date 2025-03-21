@@ -20,9 +20,16 @@
                 <field
                     name="article_ids"
                     type="text"
-                    label="Article IDs"
+                    label="Article ID's"
                     description="Enter the IDs of the articles you want to display, separated by commas."
                     size="50"
+                />
+                <field
+                    name="random"
+                    type="checkbox"
+                    label="¿Random Order?"
+                    description="The article cards will be showed in random order?"
+                    checked="0"
                 />
             </fieldset>            
         </fields>

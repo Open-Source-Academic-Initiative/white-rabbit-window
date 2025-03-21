@@ -35,6 +35,7 @@ class Dispatcher implements DispatcherInterface
         
         $username = ArticleSliderHelper::getLoggedonUsername('Guest');
         $articles = ArticleSliderHelper::getArticles($params);
+        $randomFlag = ArticleSliderHelper::getRandom($params);
 
 
         //$hello = Text::_('MOD_HELLO_GREETING') . $username;

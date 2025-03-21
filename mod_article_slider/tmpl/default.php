@@ -6,7 +6,7 @@ $loadMoreStep = 3;
 ?>
 
 <div class="container">
-    <div id="article-container" class="row">
+    <div id="article-container" class="row">        
         <?php foreach ($articles as $index => $article) : ?>
             <?php 
                 // Extract Schema.org `thumbnailUrl`

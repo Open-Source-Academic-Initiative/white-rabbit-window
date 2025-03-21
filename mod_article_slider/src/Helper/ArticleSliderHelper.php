@@ -29,6 +29,13 @@ class ArticleSliderHelper
         }
     }
 
+    public static function getRandom($params)
+    {
+        // Get module "random?" parameter
+        $randomFlag = $params->get('random', '');
+        return $randomFlag;
+    }
+
     public static function getArticles($params)
     {
         
@@ -49,16 +56,29 @@ class ArticleSliderHelper
         // Convert the string to an array and sanitize values
         $articleIds = array_filter(array_map('intval', explode(',', $articleIds)));
 
+        // Convert array back to a string with comma separation for SQL query
+        $articleIdsList = implode(',', $articleIds);
+
+        //$randomFlag = $this->getRandom($params);
+        $randomFlag = $params->get('random', '');
+
         // Ensure we have valid IDs
         if (empty($articleIds)) {
             return [];
         }
-
+        
+        if ($randomFlag){
         // Build the query to fetch article details
-        $query->select($db->quoteName(['id', 'title', 'introtext', 'images']))
-              ->from($db->quoteName('#__content'))
-              ->where($db->quoteName('id') . ' IN (' . implode(',', $articleIds) . ')')
-              ->order('hits DESC'); // Order by most viewed articles
+            $query->select($db->quoteName(['id', 'title', 'introtext', 'images']))
+                ->from($db->quoteName('#__content'))
+                ->where($db->quoteName('id') . ' IN (' . implode(',', $articleIds) . ')')
+                ->order('RAND()'); // random order
+        }else{
+            $query->select($db->quoteName(['id', 'title', 'introtext', 'images']))
+                ->from($db->quoteName('#__content'))
+                ->where($db->quoteName('id') . ' IN (' . implode(',', $articleIds) . ')')
+                ->order('FIELD(id, ' . $articleIdsList . ')');
+        }
 
         $db->setQuery($query);
 
